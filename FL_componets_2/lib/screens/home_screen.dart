@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 
+import 'package:fl_componets_2/router/app_routes.dart';
+
 class HomeScreen extends StatelessWidget {
+
   const HomeScreen({Key? key}) : super(key: key);
 
   @override
@@ -14,14 +17,14 @@ class HomeScreen extends StatelessWidget {
       ),
       body: ListView.separated(
           itemBuilder: (context, index) => ListTile(
-              leading: const Icon(Icons.access_time_outlined),
-              title: const Text('Nombre de fila'),
+              leading: Icon(AppRoutes.menuOptions[index].icon),
+              title: Text(AppRoutes.menuOptions[index].name),
               onTap: () => {
-                Navigator.pushNamed(context, 'listview1')
+                Navigator.pushNamed(context, AppRoutes.menuOptions[index].route)
               },
           ),
           separatorBuilder: (context, index) => const Divider(),
-          itemCount: 10
+          itemCount: AppRoutes.menuOptions.length
       ),
     );
   }

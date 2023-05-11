@@ -1,6 +1,4 @@
-
 import 'package:fl_componets_2/router/app_routes.dart';
-import 'package:fl_componets_2/screens/screens.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -20,7 +18,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       initialRoute: AppRoutes.initialRoute,
-      routes: AppRoutes.routes,
+      routes: AppRoutes.getAppRoutes(),
       onGenerateRoute: AppRoutes.OnGenerateRoute
     );
   }
